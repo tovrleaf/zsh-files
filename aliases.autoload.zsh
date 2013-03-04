@@ -1,5 +1,6 @@
 # List drectory contents
-alias ls='pwd; ls -G'
+alias ls='echo \>\> $fg_no_bold[green]$(pwd)$reset_color; ls -G'
+
 alias l='ls'
 alias ll='ls -l'
 alias la='ls -lA'
