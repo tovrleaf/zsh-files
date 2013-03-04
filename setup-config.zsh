@@ -28,5 +28,6 @@ for conf ($MY_ZSH/*.autoload.zsh); do
 done
 
 # format prompt
-PROMPT="%{$fg_bold[yellow]%}%T% %{$fg_no_bold[yellow]%} %1~%{$reset_color%}%# "
+PROMPT='%{$fg_bold[yellow]%}%T% %{$fg_no_bold[yellow]%} %1~%{$reset_color%}$(git_super_status)%# '
 RPROMPT="%{$fg_no_bold[green]%}%d%{$reset_color%}"
+

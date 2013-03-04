@@ -8,6 +8,8 @@ alias sl='ls'
 
 alias p='pwd'
 alias o='open'
+alias g='git'
+compdef '_dispatch git git' g
 
 # Shortcuts for aggregate functions
 alias -g C='|wc -l'
