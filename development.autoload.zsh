@@ -1,3 +1,2 @@
-vkdev="/www/verkkokauppacom/dev"
-alias cdd="cd $vkdev"
+Alias cdd="cd $DEV_ROOT"
 alias pu="phpunit --colors --verbose"
