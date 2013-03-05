@@ -15,6 +15,9 @@ setopt completealiases
 setopt AUTO_CD
 
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+# composer, dev tools
+test ! -n $COMPOSER_DIR || PATH=$COMPOSER_DIR:$PATH
+
 
 # zsh completions
 fpath=(/usr/local/share/zsh-completions $fpath)
