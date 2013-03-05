@@ -14,14 +14,14 @@ setopt completealiases
 # why would you type 'cd dir' if you could just type 'dir'?
 setopt AUTO_CD
 
-PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+PATH=/usr/local/bin:/usr/local/zend/bin:/usr/bin:/bin:/usr/sbin:/sbin
 # composer, dev tools
 test ! -n $COMPOSER_DIR || PATH=$COMPOSER_DIR:$PATH
 
 
 # zsh completions
 fpath=(/usr/local/share/zsh-completions $fpath)
-if [ -f $(brew --prefix)/etc/bash_completion.d ]; then
+if [ type brew &>/dev/null && $? -eq 0 -a -f $(brew --prefix)/etc/bash_completion.d ]; then
     . $(brew --prefix)/etc/bash_completion.d
 fi
 
@@ -31,6 +31,8 @@ for conf ($MY_ZSH/*.autoload.zsh); do
 done
 
 # format prompt
-PROMPT='%{$fg_bold[yellow]%}%T% %{$fg_no_bold[yellow]%} %1~%{$reset_color%}$(git_super_status)%# '
+PROMPT="%{$fg_bold[yellow]%}%T% %{$fg_no_bold[yellow]%} %1~%{$reset_color%}"
+! type git_super_status &>/dev/null || PROMPT=$PROMPT'$(git_super_status)'
+PROMPT=$PROMPT"%# "
 RPROMPT="%{$fg_no_bold[green]%}%d%{$reset_color%}"
 

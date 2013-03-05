@@ -21,3 +21,4 @@ alias -g CP='|pbcopy'
 # Easy editing
 alias sz='source ~/.zshrc'
 alias ez='vim ~/.zshrc'
+alias cdz='cd ~/.zsh'
