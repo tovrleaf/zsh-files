@@ -14,7 +14,7 @@ setopt completealiases
 # why would you type 'cd dir' if you could just type 'dir'?
 setopt AUTO_CD
 
-PATH=/usr/local/bin:/usr/local/zend/bin:/usr/bin:/bin:/usr/sbin:/sbin
+PATH=~/bin:/usr/local/bin:/usr/local/zend/bin:/usr/bin:/bin:/usr/sbin:/sbin
 # composer, dev tools
 test ! -n $COMPOSER_DIR || PATH=$COMPOSER_DIR:$PATH
 
