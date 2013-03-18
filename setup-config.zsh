@@ -18,12 +18,9 @@ PATH=~/bin:/usr/local/bin:/usr/local/zend/bin:/usr/bin:/bin:/usr/sbin:/sbin
 # composer, dev tools
 test ! -n $COMPOSER_DIR || PATH=$COMPOSER_DIR:$PATH
 
-
 # zsh completions
 fpath=(/usr/local/share/zsh-completions $fpath)
-if [ type brew &>/dev/null && $? -eq 0 -a -f $(brew --prefix)/etc/bash_completion.d ]; then
-    . $(brew --prefix)/etc/bash_completion.d
-fi
+! type brew &>/dev/null || ! test -d $(brew --prefix)/etc/bash_completion.d || . $(brew --prefix)/etc/bash_completion.d
 
 # autoload all autoloadable files: history, aliases, etc
 for conf ($MY_ZSH/*.autoload.zsh); do
