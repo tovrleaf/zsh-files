@@ -9,10 +9,10 @@ HISTSIZE=10000
 setopt APPEND_HISTORY
 
 # Write after each command
-# setopt INC_APPEND_HISTORY
+#setopt INC_APPEND_HISTORY
 
-# ShAre history between multiple shells
-setopt SHARE_HISTORY
+# Share history between multiple shells
+#setopt SHARE_HISTORY
 
 # If I type cd and then cd again, only save the last one
 setopt HIST_IGNORE_DUPS
