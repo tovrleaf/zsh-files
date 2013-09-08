@@ -6,10 +6,12 @@ alias ll='ls -l'
 alias la='ls -lA'
 alias lsa='ls -lah'
 alias sl='ls'
+alias prev=1
 
 alias p='pwd'
 alias o='open'
 alias g='git'
+alias v='vim'
 
 # Shortcuts for aggregate functions
 alias -g C='|wc -l'
