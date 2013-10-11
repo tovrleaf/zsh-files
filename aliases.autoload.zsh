@@ -12,6 +12,7 @@ alias p='pwd'
 alias o='open'
 alias g='git'
 alias v='vim'
+alias u='uname -a'
 
 # Shortcuts for aggregate functions
 alias -g C='|wc -l'
@@ -23,3 +24,4 @@ alias -g CP='|pbcopy'
 alias sz='source ~/.zshrc'
 alias ez='vim ~/.zshrc'
 alias cdz='cd ~/.zsh'
+alias v='vim'

@@ -19,7 +19,7 @@ PATH=$PATH:/usr/local/texlive/2012basic/bin/universal-darwin:/usr/local/texlive/
 export PATH="$PATH:/www/verkkokauppacom/dev/vendor/bin"
 
 # composer, dev tools
-test ! -n $COMPOSER_DIR || PATH=$COMPOSER_DIR:$PATH
+test ! -n $COMPOSER_DIR || PATH=$PATH:$COMPOSER_DIR
 
 # zsh completions
 fpath=(/usr/local/share/zsh-completions $fpath)
@@ -35,4 +35,3 @@ PROMPT="%{$fg_bold[yellow]%}%T% %{$fg_no_bold[yellow]%} %1~%{$reset_color%}"
 ! type git_super_status &>/dev/null || PROMPT=$PROMPT'$(git_super_status)'
 PROMPT=$PROMPT"%# "
 RPROMPT="%{$fg_no_bold[green]%}%d%{$reset_color%}"
-
