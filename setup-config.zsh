@@ -16,7 +16,7 @@ setopt AUTO_CD
 
 PATH=~/bin:/usr/local/bin:/usr/local/zend/bin:/usr/bin:/bin:/usr/sbin:/sbin
 PATH=$PATH:/usr/local/texlive/2012basic/bin/universal-darwin:/usr/local/texlive/2012basic/bin/universal-darwin
-export PATH="$PATH:/www/verkkokauppacom/dev/vendor/bin"
+export PATH="$PATH:$vkdev/vendor/bin"
 
 # composer, dev tools
 test ! -n $COMPOSER_DIR || PATH=$PATH:$COMPOSER_DIR
