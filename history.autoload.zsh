@@ -9,10 +9,10 @@ HISTSIZE=10000
 setopt APPEND_HISTORY
 
 # Write after each command
-#setopt INC_APPEND_HISTORY
+setopt INC_APPEND_HISTORY
 
 # Share history between multiple shells
-#setopt SHARE_HISTORY
+setopt SHARE_HISTORY
 
 # If I type cd and then cd again, only save the last one
 setopt HIST_IGNORE_DUPS
@@ -24,7 +24,7 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_FIND_NO_DUPS
 
-# Pretty Obvious.  Right?
+# Pretty Obvious. Right?
 setopt HIST_REDUCE_BLANKS
 
 # If a line starts with a space, don't save it.
