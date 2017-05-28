@@ -14,13 +14,6 @@ setopt completealiases
 # why would you type 'cd dir' if you could just type 'dir'?
 setopt AUTO_CD
 
-PATH=~/bin:/usr/local/bin:/usr/local/zend/bin:/usr/bin:/bin:/usr/sbin:/sbin
-PATH=$PATH:/usr/local/texlive/2012basic/bin/universal-darwin:/usr/local/texlive/2012basic/bin/universal-darwin
-export PATH="$PATH:$vkdev/vendor/bin"
-
-# composer, dev tools
-test ! -n $COMPOSER_DIR || PATH=$PATH:$COMPOSER_DIR
-
 # zsh completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 ! type brew &>/dev/null || ! test -d $(brew --prefix)/etc/bash_completion.d || . $(brew --prefix)/etc/bash_completion.d
