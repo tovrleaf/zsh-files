@@ -27,7 +27,6 @@ alias cdz='cd ~/.zsh'
 alias v='vim'
 
 function plaa {
-<<<<<<< HEAD
     test -z $1 && return
     ssh-keygen -t rsa -b 4096 -f ~/.ssh/$1
     echo "Copying id to $1..."
