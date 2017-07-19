@@ -25,11 +25,3 @@ alias sz='source ~/.zshrc'
 alias ez='vim ~/.zshrc'
 alias cdz='cd ~/.zsh'
 alias v='vim'
-
-function plaa {
-    test -z $1 && return
-    ssh-keygen -t rsa -b 4096 -f ~/.ssh/$1
-    echo "Copying id to $1..."
-    ssh-copy-id -i ~/.ssh/$1 $1
-}
-alias gen_sshkey="plaa"

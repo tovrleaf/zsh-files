@@ -1,5 +1,3 @@
-MY_ZSH=$(dirname $0)
-
 # setup tab completion for commands
 autoload -U compinit && compinit
 # use colors
@@ -19,7 +17,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 ! type brew &>/dev/null || ! test -d $(brew --prefix)/etc/bash_completion.d || . $(brew --prefix)/etc/bash_completion.d
 
 # autoload all autoloadable files: history, aliases, etc
-for conf ($MY_ZSH/*.autoload.zsh); do
+for conf ($(dirname $0)/autoload/*.zsh); do
   source $conf
 done
 
