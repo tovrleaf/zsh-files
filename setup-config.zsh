@@ -16,6 +16,8 @@ setopt AUTO_CD
 fpath=(/usr/local/share/zsh-completions $fpath)
 ! type brew &>/dev/null || ! test -d $(brew --prefix)/etc/bash_completion.d || . $(brew --prefix)/etc/bash_completion.d
 
+source "$(dirname $0)/setup-deps.zsh"
+
 # autoload all autoloadable files: history, aliases, etc
 for conf ($(dirname $0)/autoload/*.zsh); do
   source $conf

@@ -1,2 +1,3 @@
-git-prompt
 *.swp
+*.swo
+deps/
