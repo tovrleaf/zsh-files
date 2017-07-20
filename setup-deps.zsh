@@ -6,7 +6,7 @@ local err () {
 f='/usr/local/share/zsh-completions'
 test -d "$f" || err "${f}"
 
-f="$HOME/.zsh/deps/git-prompt/zshrc.sh"
+f="$HOME/.zsh/deps/zsh-git-prompt/zshrc.sh"
 test -f "${f}" || err "${f}"
 test -f "${f}" && source "${f}"
 
