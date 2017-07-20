@@ -12,10 +12,6 @@ setopt completealiases
 # why would you type 'cd dir' if you could just type 'dir'?
 setopt AUTO_CD
 
-# zsh completions
-fpath=(/usr/local/share/zsh-completions $fpath)
-! type brew &>/dev/null || ! test -d $(brew --prefix)/etc/bash_completion.d || . $(brew --prefix)/etc/bash_completion.d
-
 source "$(dirname $0)/setup-deps.zsh"
 
 # autoload all autoloadable files: history, aliases, etc
