@@ -25,3 +25,10 @@ alias sz='source ~/.zshrc'
 alias ez='vim ~/.zshrc'
 alias cdz='cd ~/.zsh'
 alias v='vim'
+
+alias food='sodexo_food'
+
+function sodexo_food() {
+    echo -ne ' '$(curl -sL "http://www.sodexo.fi/ruokalistat/output/daily_json/878/$(date +%Y/%m/%d)/fi" | \
+        jq -r '.courses[] | select(.category != null) | "\\033[1;33m\(.category):\\t\\033[1;0m\(.title_fi) \\033[1;31m(\(.price))\\n\\033[1;0m"')
+}
