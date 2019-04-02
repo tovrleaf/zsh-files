@@ -25,7 +25,7 @@ done
 
 # format prompt
 PROMPT="%{$fg_bold[yellow]%}%T% %{$fg_no_bold[yellow]%} %1~%{$reset_color%}"
-! type git_super_status &>/dev/null || PROMPT=$PROMPT' $(git_super_status)'
+! type git_super_status &>/dev/null || PROMPT=$PROMPT'$(git_super_status)'
 
 function add_aws_profile() {
   local p=""
@@ -35,13 +35,13 @@ function add_aws_profile() {
   else
     if [ "${AWS_PROFILE_IS_SET}" != "${AWS_PROFILE}" ]; then
       export AWS_PROFILE_IS_SET=${AWS_PROFILE}
-      local p="$bg[yellow]%}%{$fg[white]%}aws%{$reset_color%}:{%{$fg[yellow]%}${AWS_PROFILE}%{$reset_color%}}# "
+      local p=" $bg[yellow]%}%{$fg[white]%}aws%{$reset_color%}:{%{$fg[yellow]%}${AWS_PROFILE}%{$reset_color%}}"
     fi
   fi
 
   echo "${p}"
 }
-PROMPT=$PROMPT'$(add_aws_profile)'
+PROMPT=$PROMPT'$(add_aws_profile) '
 
 function check_last_exit_code() {
   local LAST_EXIT_CODE=$?

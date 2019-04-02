@@ -2,11 +2,6 @@ alias pu="phpunit --colors --verbose"
 
 alias cdg='test "$(git rev-parse --show-cdup 2>/dev/null)" != "" && cd "$(git rev-parse --show-cdup)"'
 
-#alias python='/usr/local/bin/python2'
-#alias pip='/usr/local/bin/pip2'
-#export PATH=$PATH:~/Library/Python/2.7/bin
-
-
 function git_config() {
     local email="niko.kivela@finnair.com"
     if [[ "$(pwd)" =~ "finnaircom" && "$(git config user.email)" != "${email}" ]]; then
@@ -17,3 +12,8 @@ function git_config() {
 alias git_config="git_config"
 
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status

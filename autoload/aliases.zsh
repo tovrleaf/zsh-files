@@ -32,3 +32,5 @@ function sodexo_food() {
     echo -ne ' '$(curl -sL "http://www.sodexo.fi/ruokalistat/output/daily_json/878/$(date +%Y/%m/%d)/fi" | \
         jq -r '.courses[] | select(.category != null) | "\\033[1;33m\(.category):\\t\\033[1;0m\(.title_fi) \\033[1;31m(\(.price))\\n\\033[1;0m"')
 }
+
+alias genpassword='pwgen -y -s $(( ( RANDOM % 10 ) + 64 )) -1'
