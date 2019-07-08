@@ -56,4 +56,3 @@ function check_last_exit_code() {
 RPROMPT='$(check_last_exit_code)%{$fg_no_bold[green]%}%d%{$reset_color%}'
 
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-
