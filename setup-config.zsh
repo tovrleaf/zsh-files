@@ -35,8 +35,8 @@ function add_aws_profile() {
   else
     if [ "${AWS_PROFILE_IS_SET}" != "${AWS_PROFILE}" ]; then
       export AWS_PROFILE_IS_SET=${AWS_PROFILE}
-      local p=" $bg[yellow]%}%{$fg[white]%}aws%{$reset_color%}:{%{$fg[yellow]%}${AWS_PROFILE}%{$reset_color%}}"
     fi
+    p=" %{$bg[yellow]%}%{$fg[white]%}aws%{$reset_color%}:{%{$fg[yellow]%}${AWS_PROFILE_IS_SET}%{$reset_color%}}"
   fi
 
   echo "${p}"
