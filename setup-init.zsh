@@ -4,15 +4,15 @@ for p in ${packages[@]}; do
 done
 
 repositories=$(cat <<EOF
-git@github.com:zsh-users/zsh-autosuggestions.git
-git@github.com:olivierverdier/zsh-git-prompt.git
-git@github.com:scmbreeze/scm_breeze.git
-git@github.com:wting/autojump.git
+https://github.com/zsh-users/zsh-autosuggestions.git
+https://github.com/olivierverdier/zsh-git-prompt.git
+https://github.com/scmbreeze/scm_breeze.git
+https://github.com/wting/autojump.git
 EOF
 )
 
 for r in ${repositories[@]}; do
-  dir=$(echo $r | awk -F'/' '{ print $2; }' | sed 's|.git$||')
+  dir=$(echo $r | xargs basename | sed 's|.git$||')
   fdir="${HOME}/.zsh/deps/${dir}"
   test -d "${fdir}" && pushd "${fdir}" >/dev/null && git pull && popd >/dev/null
   ! test -d "${fdir}" && git clone $r "${fdir}"
