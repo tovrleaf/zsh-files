@@ -27,4 +27,19 @@ alias ez='vim ~/.zshrc'
 alias cdz='cd ~/.zsh'
 alias v='vim'
 
+
 alias genpassword='pwgen -y -s $(( ( RANDOM % 10 ) + 64 )) -1'
+
+function _sshkeygenwrapper() {
+    if [ "$#" -ne "2" ]; then
+        echo "Usage: email@address user@service"
+        return
+    fi
+
+    f="$HOME/.ssh/${2}_id_rsa"
+
+    ssh-keygen -t rsa -b 4096 -C "${1}" -f "${f}"
+    echo "To add SSH private key to the ssh-agent and store passphrase in the keychain, run"
+    echo -e "\tssh -add -K $f"
+}
+alias skeygen='_sshkeygenwrapper $@'
