@@ -20,6 +20,7 @@ alias -g G='|grep'
 alias -g L='|less'
 alias -g CP='|pbcopy'
 alias -g J='|jq'
+alias -g D='|diff-so-fancy'
 
 # Easy editing
 alias sz='source ~/.zshrc'
