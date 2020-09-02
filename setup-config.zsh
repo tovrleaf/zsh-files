@@ -43,9 +43,6 @@ function add_aws_profile() {
 }
 PROMPT=$PROMPT'$(add_aws_profile) '
 
-complete -C aws_completer aws
-
-
 function check_last_exit_code() {
   local LAST_EXIT_CODE=$?
   if [[ $LAST_EXIT_CODE -ne 0 ]]; then

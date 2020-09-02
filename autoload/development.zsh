@@ -7,12 +7,18 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 function _selaws() {
     local config="${HOME}/.aws/config"
     test ! -f ${config} && echo "File ${config} does not exist" && return 1
-    select _aws_profile in $(cat "${config}" | grep '\[profile' | sed 's/\[profile \(.*\)]/\1/'); do
-        export AWS_PROFILE=$_aws_profile;
-        break;
-    done
+    which fdf 2>&1 >/dev/null
+    if [[ $? -ne 0 ]]; then
+        select _aws_profile in $(cat "${config}" | grep '\[profile' | sed 's/\[profile \(.*\)]/\1/'); do
+            export AWS_PROFILE=$_aws_profile;
+            break;
+        done
+    else
+        export AWS_PROFILE=$(cat ~/.aws/config | grep '\[profile' | sed 's/\[profile \(.*\)]/\1/' | fzf)
+    fi
 }
-alias selaws='_selaws'
+#alias selaws='_selaws'
+alias selaws='export AWS_PROFILE=$(cat ~/.aws/config | grep "\[profile" | sed "s/\[profile \(.*\)]/\1/" | fzf)'
 
 # Git
 
