@@ -44,3 +44,9 @@ function _sshkeygenwrapper() {
     echo -e "\tssh -add -K $f"
 }
 alias skeygen='_sshkeygenwrapper $@'
+
+function _sha256sum() {
+    openssl sha256 $1 | cut -d' ' -f2
+}
+alias sha256sum='_sha256sum $@'
+
