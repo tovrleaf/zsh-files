@@ -2,12 +2,12 @@
 alias cdg='test "$(git rev-parse --show-cdup 2>/dev/null)" != "" && cd "$(git rev-parse --show-cdup)"'
 
 # Add 'code' to path
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+alias vscode='PYTHONPATH='' /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
 
 function _selaws() {
     local config="${HOME}/.aws/config"
     test ! -f ${config} && echo "File ${config} does not exist" && return 1
-    which fdf 2>&1 >/dev/null
+    which fzf 2>&1 >/dev/null
     if [[ $? -ne 0 ]]; then
         select _aws_profile in $(cat "${config}" | grep '\[profile' | sed 's/\[profile \(.*\)]/\1/'); do
             export AWS_PROFILE=$_aws_profile;
@@ -19,10 +19,6 @@ function _selaws() {
 }
 #alias selaws='_selaws'
 alias selaws='export AWS_PROFILE=$(cat ~/.aws/config | grep "\[profile" | sed "s/\[profile \(.*\)]/\1/" | fzf)'
-
-# Git
-
-alias guts="${HOME}/Documents/Code/github/tovrleaf/git-utils/dist/guts"
 
 # The name of the current branch
 # Back-compatibility wrapper for when this function was defined here in
