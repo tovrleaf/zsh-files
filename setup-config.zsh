@@ -25,7 +25,7 @@ done
 
 # format prompt
 PROMPT="%{$fg_bold[yellow]%}%T% %{$fg_no_bold[yellow]%} %1~%{$reset_color%}"
-! type git_super_status &>/dev/null || PROMPT=$PROMPT'$(git_super_status)'
+! type git_super_status &>/dev/null || PROMPT=${PROMPT}'$(git_super_status)'
 
 function add_aws_profile() {
   local p=""
