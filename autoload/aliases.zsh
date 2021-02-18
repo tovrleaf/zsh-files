@@ -28,7 +28,6 @@ alias ez='vim ~/.zshrc'
 alias cdz='cd ~/.zsh'
 alias v='vim'
 
-
 alias genpassword='pwgen -y -s $(( ( RANDOM % 10 ) + 64 )) -1'
 
 function _sshkeygenwrapper() {
