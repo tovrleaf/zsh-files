@@ -4,22 +4,6 @@ alias cdg='test "$(git rev-parse --show-cdup 2>/dev/null)" != "" && cd "$(git re
 # Add 'code' to path
 alias vscode='PYTHONPATH='' /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
 
-function _selaws() {
-    local config="${HOME}/.aws/config"
-    test ! -f ${config} && echo "File ${config} does not exist" && return 1
-    which fzf 2>&1 >/dev/null
-    if [[ $? -ne 0 ]]; then
-        select _aws_profile in $(cat "${config}" | grep '\[profile' | sed 's/\[profile \(.*\)]/\1/'); do
-            export AWS_PROFILE=$_aws_profile;
-            break;
-        done
-    else
-        export AWS_PROFILE=$(cat ~/.aws/config | grep '\[profile' | sed 's/\[profile \(.*\)]/\1/' | fzf)
-    fi
-}
-#alias selaws='_selaws'
-alias selaws='export AWS_PROFILE=$(cat ~/.aws/config | grep "\[profile" | sed "s/\[profile \(.*\)]/\1/" | fzf)'
-
 # The name of the current branch
 # Back-compatibility wrapper for when this function was defined here in
 # the plugin, before being pulled in to core lib/git.zsh as git_current_branch()
