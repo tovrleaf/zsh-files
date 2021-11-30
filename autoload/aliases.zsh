@@ -49,3 +49,5 @@ function _sha256sum() {
 }
 alias sha256sum='_sha256sum $@'
 
+alias cat='ccat'
+alias week='date +%V'
