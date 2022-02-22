@@ -49,5 +49,6 @@ function _sha256sum() {
 }
 alias sha256sum='_sha256sum $@'
 
+# also remember bat
 alias cat='ccat'
 alias week='date +%V'
