@@ -1,4 +1,4 @@
-packages="zsh-completions zsh-history-substring-search zsh-syntax-highlighting autojump bat exa"
+packages="zsh-completions zsh-history-substring-search zsh-syntax-highlighting autojump bat exa ack"
 for p in ${packages[@]}; do
   brew ls ${p} 2>&1 >/dev/null || brew install ${p}
 done
