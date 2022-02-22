@@ -1,10 +1,10 @@
-# List drectory contents
-alias ls='echo \>\> $fg_no_bold[green]$(pwd)$reset_color; ls -G'
+# List directory contents
+alias ls='echo \>\> $fg_no_bold[green]$(pwd)$reset_color; exa --color=auto'
 
-alias l='ls'
-alias ll='ls -l'
-alias la='ls -lA'
-alias lsa='ls -lah'
+alias l='exa'
+alias ll='exa -l'
+alias la='exa -la'
+alias lsa='exa -lah'
 alias sl='ls'
 alias prev=1
 
