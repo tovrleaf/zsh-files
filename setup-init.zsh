@@ -1,13 +1,24 @@
-packages="zsh-completions zsh-history-substring-search zsh-syntax-highlighting autojump bat exa ack fd thefuck"
+packages=$(cat <<EOF
+ack
+bat
+exa
+fd
+thefuck
+zoxide
+zsh-completions
+zsh-history-substring-search
+zsh-syntax-highlighting
+EOF
+)
+
 for p in ${packages[@]}; do
   brew ls ${p} 2>&1 >/dev/null || brew install ${p}
 done
 
 repositories=$(cat <<EOF
-https://github.com/zsh-users/zsh-autosuggestions.git
 https://github.com/olivierverdier/zsh-git-prompt.git
 https://github.com/scmbreeze/scm_breeze.git
-https://github.com/wting/autojump.git
+https://github.com/zsh-users/zsh-autosuggestions.git
 EOF
 )
 

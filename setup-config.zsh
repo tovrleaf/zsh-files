@@ -55,11 +55,11 @@ function check_last_exit_code() {
 }
 RPROMPT='$(check_last_exit_code)%{$fg_no_bold[green]%}%d%{$reset_color%}'
 
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
   autoload -Uz compinit
   compinit
 fi
+
+eval "$(zoxide init zsh)"
