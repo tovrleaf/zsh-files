@@ -5,6 +5,7 @@ exa
 fd
 thefuck
 zoxide
+ripgrep
 zsh-completions
 zsh-history-substring-search
 zsh-syntax-highlighting
