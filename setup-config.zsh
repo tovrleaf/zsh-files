@@ -22,39 +22,6 @@ for conf ($(dirname $0)/autoload/*.zsh); do
   source $conf
 done
 
-
-# format prompt
-PROMPT="%{$fg_bold[yellow]%}%T% %{$fg_no_bold[yellow]%} %1~%{$reset_color%}"
-! type git_super_status &>/dev/null || PROMPT=${PROMPT}'$(git_super_status)'
-
-function add_aws_profile() {
-  local p=""
-
-  if [ "${AWS_PROFILE}" = "" ]; then
-    unset AWS_PROFILE_IS_SET
-  else
-    if [ "${AWS_PROFILE_IS_SET}" != "${AWS_PROFILE}" ]; then
-      export AWS_PROFILE_IS_SET=${AWS_PROFILE}
-    fi
-    p=" %{$bg[yellow]%}%{$fg[white]%}aws%{$reset_color%}:{%{$fg[yellow]%}${AWS_PROFILE_IS_SET}%{$reset_color%}}"
-  fi
-
-  echo "${p}"
-}
-PROMPT=$PROMPT'$(add_aws_profile) '
-
-function check_last_exit_code() {
-  local LAST_EXIT_CODE=$?
-  if [[ $LAST_EXIT_CODE -ne 0 ]]; then
-    local EXIT_CODE_PROMPT=' '
-    EXIT_CODE_PROMPT+="%{$fg[red]%}-%{$reset_color%}"
-    EXIT_CODE_PROMPT+="%{$fg_bold[red]%}$LAST_EXIT_CODE%{$reset_color%}"
-    EXIT_CODE_PROMPT+="%{$fg[red]%}-%{$reset_color%}"
-    echo "$EXIT_CODE_PROMPT"
-  fi
-}
-RPROMPT='$(check_last_exit_code)%{$fg_no_bold[green]%}%d%{$reset_color%}'
-
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
