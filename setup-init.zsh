@@ -18,7 +18,6 @@ for p in ${packages[@]}; do
 done
 
 repositories=$(cat <<EOF
-https://github.com/olivierverdier/zsh-git-prompt.git
 https://github.com/romkatv/powerlevel10k.git
 https://github.com/scmbreeze/scm_breeze.git
 https://github.com/zsh-users/zsh-autosuggestions.git

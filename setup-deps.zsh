@@ -21,11 +21,6 @@ function {
     test -f "$f" || err "${f}"
     test -f "$f" && source "${f}"
 
-    # zsh prompt
-    f="$HOME/.zsh/deps/zsh-git-prompt/zshrc.sh"
-    test -f "${f}" || err "${f}"
-    test -f "${f}" && source "${f}"
-
     # scm breeze
     f="$HOME/.zsh/deps/scm_breeze/scm_breeze.sh"
     test -f "${f}" || err "${f}"
