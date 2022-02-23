@@ -1,11 +1,12 @@
 packages=$(cat <<EOF
 ack
 bat
+dust
 exa
 fd
+ripgrep
 thefuck
 zoxide
-ripgrep
 zsh-completions
 zsh-history-substring-search
 zsh-syntax-highlighting
