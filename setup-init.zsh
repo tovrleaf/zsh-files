@@ -1,6 +1,6 @@
 packages=$(cat <<EOF
 ack
-bat
+ccat
 dust
 exa
 fd

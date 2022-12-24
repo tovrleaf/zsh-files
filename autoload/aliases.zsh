@@ -28,7 +28,7 @@ alias ez='vim ~/.zshrc'
 alias cdz='cd ~/.zsh'
 alias v='vim'
 
- eval $(thefuck --alias)
+eval $(thefuck --alias)
 
 alias genpassword='pwgen -y -s $(( ( RANDOM % 10 ) + 64 )) -1'
 

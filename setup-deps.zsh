@@ -9,20 +9,20 @@ function {
     }
 
     # zsh completions
-    f='/usr/local/share/zsh-completions'
+    f="$(brew --prefix)/share/zsh-completions"
     test -d "$f" || err "${f}"
     test -d "$f" && fpath=(${f} ${fpath})
 
-    f='/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
+    f="$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
     test -f "$f" || err "${f}"
     test -f "$f" && source "${f}"
 
-    f='/usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh'
+    f="$(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
     test -f "$f" || err "${f}"
     test -f "$f" && source "${f}"
 
     # scm breeze
-    f="$HOME/.zsh/deps/scm_breeze/scm_breeze.sh"
+    f="$HOME/.zsh/deps/scm_breeze/scm_breeze.plugin.zsh"
     test -f "${f}" || err "${f}"
     test -f "${f}" && source "${f}"
 
