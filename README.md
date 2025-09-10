@@ -8,4 +8,4 @@ sudo chsh -s $(which zsh) $(whoami)
 cdz && ./setup-init.zsh
 
 Also, remember to run scm_breeze/install.sh
-```
+````
