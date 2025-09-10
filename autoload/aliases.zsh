@@ -1,18 +1,18 @@
 # List directory contents
-alias ls='echo \>\> $fg_no_bold[green]$(pwd)$reset_color; exa --color=auto'
+alias ls='echo \>\> $fg_no_bold[green]$(pwd)$reset_color; eza --color=auto'
 
-alias l='exa'
-alias ll='exa -l'
-alias la='exa -la'
-alias lsa='exa -lah'
+alias l='eza'
+alias ll='eza -l'
+alias la='eza -la'
+alias lsa='eza -lah'
 alias sl='ls'
-alias prev=1
 
 alias p='pwd'
 alias o='open'
 alias g='git'
-alias v='vim'
+alias v='nvim'
 alias u='uname -a'
+alias d='diff-so-fancy'
 
 # Shortcuts for aggregate functions
 alias -g C='|wc -l'
@@ -45,6 +45,8 @@ function _sshkeygenwrapper() {
     echo -e "\tssh -add -K $f"
 }
 alias skeygen='_sshkeygenwrapper $@'
+
+alias brewdump='brew bundle dump --force --file=~/.config/Brewfile'
 
 function _sha256sum() {
     openssl sha256 $1 | cut -d' ' -f2

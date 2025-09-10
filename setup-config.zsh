@@ -22,11 +22,7 @@ for conf ($(dirname $0)/autoload/*.zsh); do
   source $conf
 done
 
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+PATH="/opt/homebrew/bin:${PATH}"
 
-  autoload -Uz compinit
-  compinit
-fi
-
+# zoxide is a smarter cd command, inspired by z and autojump.
 eval "$(zoxide init zsh)"
